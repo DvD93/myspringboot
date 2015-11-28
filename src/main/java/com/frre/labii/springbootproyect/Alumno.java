@@ -3,14 +3,19 @@ package com.frre.labii.springbootproyect;
 /**
  * Created by root on 28/11/15.
  */
-// Clase alumno con sus atributos, constructor y métodos publicos
+/* Clase alumno con sus atributos, constructores y métodos publicos */
 public class Alumno {
     private String nombre;
     private String apellido;
     private int legajo;
     private String carrera;
     private int cantMaterias;
+    private String coment;
 
+    public Alumno(String coment){
+        super();
+        this.coment = coment;
+    }
     public Alumno(String nombre, String apellido, int legajo, String carrera, int cantMaterias) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -57,5 +62,13 @@ public class Alumno {
 
     public void setCantMaterias(int cantMaterias) {
         this.cantMaterias = cantMaterias;
+    }
+
+    public String getComent() {
+        return coment;
+    }
+
+    public void setComent(String coment) {
+        this.coment = coment;
     }
 }
