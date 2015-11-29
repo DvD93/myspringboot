@@ -13,6 +13,7 @@ public class Controller {
     /* metodos POST GET DELTE PUT */
 
     /* listar alumnos GET method */
+    /* http://localhost:9090/alumno */
     @RequestMapping(value = "/alumno", method = RequestMethod.GET)
     public LinkedList<Alumno>alumno() {
         if (alumnos==null) {
@@ -24,7 +25,9 @@ public class Controller {
         return  alumnos;
     }
 
+
     /* agregar un alumno POST method */
+    /* http://localhost:9090/agregar */
     @RequestMapping(value="/agregar", method = RequestMethod.POST)
     public String alumno(@RequestParam(value="legajo") String legajo , @RequestParam(value="nombre") String nombre,
                          @RequestParam(value="apellido") String apellido,@RequestParam(value="carrera")String carrera,
@@ -49,7 +52,8 @@ public class Controller {
         }
     }
 
-    //modificar campos de un alumno especifico dado el legajo PUT method
+    /* modificar campos de un alumno especifico dado el legajo PUT method */
+    /* http://localhost:9090/legajo/ */
     @RequestMapping(value="/{legajo}/", method = RequestMethod.PUT)
     public Alumno alumno(@PathVariable int legajo, @RequestParam(value="nombre",required=false) String nombre,
                          @RequestParam(value="apellido",required=false) String apellido,
@@ -93,6 +97,7 @@ public class Controller {
     }
 
     /* borrar alumno DELETE method */
+    /* http://localhost:9090/borrar?legajo= */
     @RequestMapping(value="/borrar" , method = RequestMethod.DELETE)
     public String alumno(@RequestParam(value="legajo") int legajo){
         try {
